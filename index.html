@@ -31,6 +31,8 @@
      
    <main class="wrapper">
  
+    <h2>How it Works</h2>
+    <p>This is a helpful webpage to convert text into title case. It allows users to enter text in a specific input field and convert it into title case with just a click of a button. Title case means that the first letter of each word is capitalized, while the rest of the letters are in lowercase. After the user clicks the submit button, the converted text is displayed on the page, making it easier to read and aesthetically pleasing. This function saves users time and effort by automating the process of converting text into title case.</p>
     <h2 class="subheader">Place form code below:</h2>
     <div id="output">Output goes here</div>
     <form method="post" action="" class="main-form">
@@ -55,6 +57,10 @@
   <script src="js/main.js"></script>
 
   <script>
+
+  function titleCase(str){
+    return = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
     const mySubmit = document.querySelector("#submit");
     console.log(mySubmit);
 
@@ -62,11 +68,9 @@
     ev.preventDefault();
     const myInput = document.querySelector("#input");
     const myOutput = document.querySelector("#output");
-    myOutput.innerHTML = myInput.value;
+    myOutput.innerHTML = titleCase(myInput.value);
     //alert(myInput.value);
   });
-
-
   </script>   
  </body>
 </html>
